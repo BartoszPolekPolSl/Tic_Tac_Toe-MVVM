@@ -13,5 +13,13 @@ namespace Tic_Tac_Toe
     /// </summary>
     public partial class App : Application
     {
+        public static void ChangeWindow()
+        {
+            var startWindow = App.Current.MainWindow;
+            var mainWindow = new MainWindow();
+            mainWindow.Show();
+            startWindow.Close();
+
+        }
     }
 }
