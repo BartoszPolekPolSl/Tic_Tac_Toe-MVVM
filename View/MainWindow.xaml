@@ -44,32 +44,41 @@
             <Button Grid.Column="0" Grid.Row="0"
                     CommandParameter="0"
                     Content="{Binding Path=Board[0],  Mode=OneWay}"
+                    Foreground="{Binding Path=SignColor, Mode=OneWay}"
                     />
             <Button Grid.Column="0" Grid.Row="1"
                     CommandParameter="1"
                     Content="{Binding Path=Board[1],  Mode=OneWay}"
+                    Foreground="{Binding Path=SignColor, Mode=OneWay}"
                     />
             <Button Grid.Column="0" Grid.Row="2"
                     CommandParameter="2"
-                    Content="{Binding Path=Board[2],  Mode=OneWay}"/>
+                    Content="{Binding Path=Board[2],  Mode=OneWay}"
+                    Foreground="{Binding Path=SignColor, Mode=OneWay}"/>
             <Button Grid.Column="1" Grid.Row="0"
                     CommandParameter="3"
-                    Content="{Binding Path=Board[3], Mode=OneWay}"/>
+                    Content="{Binding Path=Board[3], Mode=OneWay}"
+                    Foreground="{Binding Path=SignColor, Mode=OneWay}"/>
             <Button Grid.Column="1" Grid.Row="1"
                     CommandParameter="4"
-                    Content="{Binding Path=Board[4], Mode=OneWay}"/>
+                    Content="{Binding Path=Board[4], Mode=OneWay}"
+                    Foreground="{Binding Path=SignColor, Mode=OneWay}"/>
             <Button Grid.Column="1" Grid.Row="2"
                     CommandParameter="5"
-                    Content="{Binding Path=Board[5], Mode=OneWay}"/>
+                    Content="{Binding Path=Board[5], Mode=OneWay}"
+                    Foreground="{Binding Path=SignColor, Mode=OneWay}"/>
             <Button Grid.Column="2" Grid.Row="0"
                     CommandParameter="6"
-                    Content="{Binding Path=Board[6], Mode=OneWay}"/>
+                    Content="{Binding Path=Board[6], Mode=OneWay}"
+                    Foreground="{Binding Path=SignColor, Mode=OneWay}"/>
             <Button Grid.Column="2" Grid.Row="1"
                     CommandParameter="7"
-                    Content="{Binding Path=Board[7], Mode=OneWay}"/>
+                    Content="{Binding Path=Board[7], Mode=OneWay}"
+                    Foreground="{Binding Path=SignColor, Mode=OneWay}"/>
             <Button Grid.Column="2" Grid.Row="2"
                     CommandParameter="8"
-                    Content="{Binding Path=Board[8], Mode=OneWay}"/>
+                    Content="{Binding Path=Board[8], Mode=OneWay}"
+                    Foreground="{Binding Path=SignColor, Mode=OneWay}"/>
         </Grid>
 
     </Grid>

@@ -46,11 +46,11 @@
                 <TextBox x:Name="tb_firstPlayer"
                          Margin="0,25,20,20"
                          FontSize="25"
-                         Text="{Binding Path=Player1_binded}" />
+                         Text="{Binding Path=Player1_binded, UpdateSourceTrigger=PropertyChanged}" />
                 <TextBox x:Name="tb_secondPlayer"
                          Margin="0,25,20,20"
                          FontSize="25"
-                         Text="{Binding Path=Player2_binded}"/>
+                         Text="{Binding Path=Player2_binded, UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
             <Button Grid.Column="2"
                     Margin="60,20,60,130"
