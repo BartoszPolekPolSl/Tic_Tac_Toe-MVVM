@@ -10,7 +10,7 @@ namespace Tic_Tac_Toe.ViewModel.BaseClass
     class ViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        protected void onPropertyChange(params String[] namesOfProperty)
+        protected void OnPropertyChange(params String[] namesOfProperty)
         {
             if (PropertyChanged != null)
             {
