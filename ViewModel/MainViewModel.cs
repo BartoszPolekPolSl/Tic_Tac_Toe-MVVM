@@ -14,8 +14,18 @@ namespace Tic_Tac_Toe.ViewModel
 
     class MainViewModel : ViewModel
     {
-        char sign = 'X';
-        char Sign
+        public MainViewModel()
+        {
+            CurrentPlayer = Player1;
+            sign = 'X';
+        }
+        public string Player1_binded {  get; set; }
+        public string Player2_binded {  get; set; }
+        static private string Player1 { get; set; }
+        static private string Player2 { get; set; }
+        public string CurrentPlayer { get; private set; }
+        private char sign;
+        private char Sign
         {
             get
             {
@@ -27,6 +37,12 @@ namespace Tic_Tac_Toe.ViewModel
                 {
                     sign = 'X';
                 }
+                if (CurrentPlayer == Player1)
+                {
+                    CurrentPlayer = Player2;
+                }
+                else CurrentPlayer = Player1;
+                OnPropertyChange(nameof(CurrentPlayer));
                 return sign;
             } 
         }
@@ -40,7 +56,7 @@ namespace Tic_Tac_Toe.ViewModel
                 OnPropertyChange(nameof(Board));
                 if (GameEngine.IsEnd(Board, sign) == true)
                 {
-                    MessageBox.Show("Wygrał gracz: ", "Koniec gry", MessageBoxButton.OK, MessageBoxImage.Information);
+                    GameEngine.ShowEndingMessage((CurrentPlayer==Player1?Player2:Player1));
                 }
             }
         }
@@ -57,10 +73,8 @@ namespace Tic_Tac_Toe.ViewModel
         {
             get
             {
-                return changeWindow ?? (changeWindow = new RelayCommand(p=>App.ChangeWindow(), null)) ;
+                return changeWindow ?? (changeWindow = new RelayCommand((p)=> { Player1 = Player1_binded; Player2 = Player2_binded; App.ChangeWindow(); }, null)) ;
             }
         }
-        
-
     }
 }

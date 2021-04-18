@@ -45,16 +45,18 @@
             <StackPanel Grid.Column="1">
                 <TextBox x:Name="tb_firstPlayer"
                          Margin="0,25,20,20"
-                         FontSize="25"/>
+                         FontSize="25"
+                         Text="{Binding Path=Player1_binded}" />
                 <TextBox x:Name="tb_secondPlayer"
                          Margin="0,25,20,20"
-                         FontSize="25"/>
+                         FontSize="25"
+                         Text="{Binding Path=Player2_binded}"/>
             </StackPanel>
             <Button Grid.Column="2"
                     Margin="60,20,60,130"
                     Content="START"
                     FontSize="50"
-                    Command="{Binding ChangeWindow}"/>
+                    Command="{Binding Path=ChangeWindow}"/>
             
         </Grid>
     </Grid>

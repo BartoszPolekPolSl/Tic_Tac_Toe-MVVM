@@ -18,7 +18,16 @@ namespace Tic_Tac_Toe
             var startWindow = App.Current.MainWindow;
             var mainWindow = new MainWindow();
             mainWindow.Show();
+            App.Current.MainWindow = mainWindow;
             startWindow.Close();
+        }
+        public static void NewGame()
+        {
+            var oldWindow = App.Current.MainWindow;
+            var startWindow = new View.StartWindow();
+            startWindow.Show();
+            App.Current.MainWindow = startWindow;
+            oldWindow.Close();
 
         }
     }

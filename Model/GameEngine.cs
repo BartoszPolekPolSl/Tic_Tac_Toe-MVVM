@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Tic_Tac_Toe.Model
 {
@@ -44,6 +45,19 @@ namespace Tic_Tac_Toe.Model
             }
             return false;
         }
+        static public void ShowEndingMessage(string player)
+        {
+            MessageBox.Show($"Wygrał gracz: {player}", "Gratulacje!", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBoxResult result = MessageBox.Show("Czy chcesz zagrać jeszcze raz?", "Koniec gry", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
+            {
+                App.NewGame();
+            }
+            else
+            {
+                App.Current.MainWindow.Close();
+            }
+        }
         static private bool IsEndingPosition(char[] endingPosition, char sign)
         {
             int counter = 0;
@@ -63,6 +77,5 @@ namespace Tic_Tac_Toe.Model
                 return false;
             }
         }
-
     }
 }

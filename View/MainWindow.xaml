@@ -13,6 +13,7 @@
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Command" Value="{Binding SetSign}"/>
+            <Setter Property="FontSize" Value="25"/>
         </Style>
     </Window.Resources>
     <Grid>
@@ -25,7 +26,7 @@
                Content="Ruch gracza: "
                FontSize="40"/>
             <Label x:Name="lb_player"
-                   Content="cdfd"
+                   Content="{Binding Path=CurrentPlayer, Mode=OneWay}"
                    FontSize="40"/>
         </StackPanel>
         <Grid Grid.Row="1">
