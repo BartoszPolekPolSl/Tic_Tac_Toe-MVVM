@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tic_Tac_Toe.View"
         mc:Ignorable="d"
+        ResizeMode="CanMinimize"
         xmlns:vm="clr-namespace:Tic_Tac_Toe.ViewModel"
         Title="Tic Tac Toe" Height="450" Width="800">
 

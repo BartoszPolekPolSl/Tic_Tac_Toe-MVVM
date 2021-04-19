@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 
 namespace Tic_Tac_Toe.Model
 {
@@ -36,18 +37,44 @@ namespace Tic_Tac_Toe.Model
                 new char[3] { board[2], board[4], board[6] }
 
             };
-            foreach(var e in endingPositions)
+            foreach (var e in endingPositions)
             {
-                if(IsEndingPosition(e, sign) == true)
+                if (IsEndingPosition(e, sign) == true)
                 {
                     return true;
                 }
             }
             return false;
         }
+        static public bool IsDraw(char[] board)
+        {
+            int counter = 0;
+            for (int i = 0; i <=8; i++)
+            {
+                if (board[i] != '\0')
+                {
+                    counter++;
+                }
+            }
+            if (counter == 9) return true;
+            else return false;
+        }
         static public void ShowEndingMessage(string player)
         {
             MessageBox.Show($"Wygrał gracz: {player}", "Gratulacje!", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBoxResult result = MessageBox.Show("Czy chcesz zagrać jeszcze raz?", "Koniec gry", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
+            {
+                App.NewGame();
+            }
+            else
+            {
+                App.Current.MainWindow.Close();
+            }
+        }
+        static public void ShowEndingMessage()
+        {
+            MessageBox.Show("Remis", "Wynik!", MessageBoxButton.OK, MessageBoxImage.Information);
             MessageBoxResult result = MessageBox.Show("Czy chcesz zagrać jeszcze raz?", "Koniec gry", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (result == MessageBoxResult.Yes)
             {
@@ -77,5 +104,14 @@ namespace Tic_Tac_Toe.Model
                 return false;
             }
         }
+        static public List<Brush>UpdateSignColorList(List<Brush> list, string index, Brush color)
+        {
+            var i = int.Parse(index);
+            List<Brush> newList = new List<Brush>();
+            newList = list;
+            newList[i] = color;
+            return newList;
+        }
     }
 }
+

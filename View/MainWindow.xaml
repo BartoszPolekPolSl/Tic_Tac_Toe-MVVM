@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:Tic_Tac_Toe"
         xmlns:vm="clr-namespace:Tic_Tac_Toe.ViewModel"
         mc:Ignorable="d"
+        ResizeMode="CanMinimize"
         Title="MainWindow" Height="450" Width="800">
     <Window.DataContext>
         <vm:MainViewModel x:Name="viewModel"/>
@@ -28,6 +29,13 @@
             <Label x:Name="lb_player"
                    Content="{Binding Path=CurrentPlayer, Mode=OneWay}"
                    FontSize="40"/>
+            
+        </StackPanel>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Label Content="{Binding Path=Sign, Mode=OneWay}"
+                   FontSize="40"
+                   Margin="600,0,0,0"
+                   Foreground="{Binding Path=SignColor}"/>
         </StackPanel>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
@@ -44,41 +52,41 @@
             <Button Grid.Column="0" Grid.Row="0"
                     CommandParameter="0"
                     Content="{Binding Path=Board[0],  Mode=OneWay}"
-                    Foreground="{Binding Path=SignColor, Mode=OneWay}"
+                    Foreground="{Binding Path=SignColorList[0], Mode=OneWay}"
                     />
             <Button Grid.Column="0" Grid.Row="1"
                     CommandParameter="1"
                     Content="{Binding Path=Board[1],  Mode=OneWay}"
-                    Foreground="{Binding Path=SignColor, Mode=OneWay}"
+                    Foreground="{Binding Path=SignColorList[1], Mode=OneWay}"
                     />
             <Button Grid.Column="0" Grid.Row="2"
                     CommandParameter="2"
                     Content="{Binding Path=Board[2],  Mode=OneWay}"
-                    Foreground="{Binding Path=SignColor, Mode=OneWay}"/>
+                    Foreground="{Binding Path=SignColorList[2], Mode=OneWay}"/>
             <Button Grid.Column="1" Grid.Row="0"
                     CommandParameter="3"
                     Content="{Binding Path=Board[3], Mode=OneWay}"
-                    Foreground="{Binding Path=SignColor, Mode=OneWay}"/>
+                    Foreground="{Binding Path=SignColorList[3], Mode=OneWay}"/>
             <Button Grid.Column="1" Grid.Row="1"
                     CommandParameter="4"
                     Content="{Binding Path=Board[4], Mode=OneWay}"
-                    Foreground="{Binding Path=SignColor, Mode=OneWay}"/>
+                    Foreground="{Binding Path=SignColorList[4], Mode=OneWay}"/>
             <Button Grid.Column="1" Grid.Row="2"
                     CommandParameter="5"
                     Content="{Binding Path=Board[5], Mode=OneWay}"
-                    Foreground="{Binding Path=SignColor, Mode=OneWay}"/>
+                    Foreground="{Binding Path=SignColorList[5], Mode=OneWay}"/>
             <Button Grid.Column="2" Grid.Row="0"
                     CommandParameter="6"
                     Content="{Binding Path=Board[6], Mode=OneWay}"
-                    Foreground="{Binding Path=SignColor, Mode=OneWay}"/>
+                    Foreground="{Binding Path=SignColorList[6], Mode=OneWay}"/>
             <Button Grid.Column="2" Grid.Row="1"
                     CommandParameter="7"
                     Content="{Binding Path=Board[7], Mode=OneWay}"
-                    Foreground="{Binding Path=SignColor, Mode=OneWay}"/>
+                    Foreground="{Binding Path=SignColorList[7], Mode=OneWay}"/>
             <Button Grid.Column="2" Grid.Row="2"
                     CommandParameter="8"
                     Content="{Binding Path=Board[8], Mode=OneWay}"
-                    Foreground="{Binding Path=SignColor, Mode=OneWay}"/>
+                    Foreground="{Binding Path=SignColorList[8], Mode=OneWay}"/>
         </Grid>
 
     </Grid>
